@@ -6,7 +6,10 @@ const Pay = () => {
     const amount = 799;
 
     try {
-      const response = await fetch("http://localhost:5000/api/payment", {
+     // const response = await fetch("http://localhost:5000/api/payment", {
+const res = await fetch(
+  `${process.env.REACT_APP_API_URL}/api/payment`,
+  {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ amount }),
